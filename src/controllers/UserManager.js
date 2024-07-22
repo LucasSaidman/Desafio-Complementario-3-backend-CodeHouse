@@ -196,9 +196,9 @@ class UserManager {
 
   //Cambiar el rol del usuario: 
 
-  async cambiarRolPremium(req, res) {
-    const {uid} = req.params; 
+  async cambiarRolPremium(req, res) { 
     try {
+        const {uid} = req.params;
         //Busco el usuario: 
         const user = await UserModel.findById(uid); 
 

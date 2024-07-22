@@ -11,7 +11,7 @@ router.get("/products", checkUserRole(['usuario']),passport.authenticate('jwt', 
 router.get("/carts/:cid", viewsManager.renderCart);
 router.get("/login", viewsManager.renderLogin);
 router.get("/register", viewsManager.renderRegister);
-router.get("/realtimeproducts", checkUserRole(['admin']), viewsManager.renderRealTimeProducts);
+router.get("/realtimeproducts", checkUserRole(['admin', 'premium']), viewsManager.renderRealTimeProducts);
 router.get("/chat", checkUserRole(['usuario']) ,viewsManager.renderChat);
 router.get("/", viewsManager.renderHome);
 

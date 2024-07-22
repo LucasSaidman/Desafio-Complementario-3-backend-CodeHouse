@@ -95,8 +95,9 @@ class ViewsManager {
     }
 
     async renderRealTimeProducts(req, res) {
+        const usuario = req.user;
         try {
-            res.render("realtimeproducts");
+            res.render("realtimeproducts", {role: usuario.role, email: usuario.email});
         } catch (error) {
             console.log("error en la vista real time", error);
             res.status(500).json({ error: "Error interno del servidor" });
